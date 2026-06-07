@@ -12,8 +12,10 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// Path to compiled C++ solver binary
-const SOLVER_PATH = path.join(__dirname, '../bin/kociemba_solver.exe');
+// Dynamic binary name based on OS
+const isWindows = process.platform === 'win32';
+const binaryName = isWindows ? 'kociemba_solver.exe' : 'kociemba_solver';
+const SOLVER_PATH = path.join(__dirname, '../bin', binaryName);
 const SOLVED_STATE = 'UUUUUUUUURRRRRRRRRFFFFFFFFFDDDDDDDDDLLLLLLLLLBBBBBBBBB';
 
 // Health check endpoint
