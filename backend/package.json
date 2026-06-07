@@ -1,0 +1,19 @@
+{
+  "name": "rubiks-cube-solver-backend",
+  "version": "1.0.0",
+  "description": "Express bridge for C++ Rubik's Cube Kociemba solver",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "private": true
+}
